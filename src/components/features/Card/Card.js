@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';  
 
 const CardCreator = props =>{ 
 
@@ -12,7 +13,7 @@ const CardCreator = props =>{
             <Card.Text>
             {props.shortDescription}
             </Card.Text>
-            <Button variant="primary" href={`/post/${props.id}`} >Read more</Button>
+            <Button variant="primary" as={NavLink} to={`/post/${props.id}`} >Read more</Button>
         </Card.Body>
         </Card>
     );
