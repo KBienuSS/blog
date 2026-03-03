@@ -10,7 +10,8 @@ const AddPostForm = props =>{
     const dispatch = useDispatch();
 
     const handleSubmit = (data) => {
-        dispatch(addPost({data}));
+        dispatch(addPost(data));
+        console.log(data);
         navigate('/');
     };
 

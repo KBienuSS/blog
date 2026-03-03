@@ -8,6 +8,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import dateToStr from '../../../utils/dateToStr';  
 
 const Post = () =>{ 
 
@@ -39,7 +40,7 @@ const Post = () =>{
                                     <span className="fw-semibold">Author:</span> {postData.author}
                                 </p>
                                 <p className="mb-0">
-                                    <span className="fw-semibold">Published:</span> {postData.publishedDate}
+                                    <span className="fw-semibold">Published:</span> {dateToStr(postData.publishedDate)} 
                                 </p>
                             </div>
                         </Col>
@@ -76,7 +77,7 @@ const Post = () =>{
                 </header>
                 <div className="border-top pt-4">
                     <div className="content" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-                        {postData.content}
+                        <p dangerouslySetInnerHTML={{ __html:postData.content}} />
                     </div>
                 </div>
             </article>

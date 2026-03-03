@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import Card from "../../features/Card/Card";
 import { Container, Col, Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { NavLink } from 'react-router-dom';  
+import { NavLink } from 'react-router-dom';
+import dateToStr from '../../../utils/dateToStr';  
 
 const Home = () =>{ 
     const posts = useSelector(getAllPosts);
@@ -31,7 +32,7 @@ const Home = () =>{
                             id={post.id}
                             title={post.title} 
                             author={post.author} 
-                            publishedDate={post.publishedDate} 
+                            publishedDate={dateToStr(post.publishedDate)} 
                             shortDescription={post.shortDescription}
                         />
                     </Col>

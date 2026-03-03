@@ -1,12 +1,16 @@
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const PostForm = props => {
 
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
-    const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
+    const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
 
@@ -37,10 +41,7 @@ const PostForm = props => {
 
                 <Form.Group className="mb-3" controlId="published">
                     <Form.Label>Published Date</Form.Label>
-                    <Form.Control 
-                        type="date" 
-                        value={publishedDate} 
-                        onChange={e => setPublishedDate(e.target.value)}/>
+                    <DatePicker selected={publishedDate} onChange={(publishedDate) => setPublishedDate(publishedDate)} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="shortDescription">
@@ -56,13 +57,13 @@ const PostForm = props => {
 
                 <Form.Group className="mb-4" controlId="content">
                     <Form.Label>Main Content</Form.Label>
-                    <Form.Control 
-                        as="textarea" 
-                        rows={6} 
-                        placeholder="Enter post content"
+                    <ReactQuill 
+                        theme="snow" 
                         value={content} 
-                        onChange={e => setContent(e.target.value)}
-                    />
+                        onChange={setContent}
+                        placeholder="Enter post content"
+                        style={{ height: '200px', marginBottom: '50px' }}
+                        />
                 </Form.Group>
 
                 <Button variant="primary" size="lg" onClick={handleSubmit}>
