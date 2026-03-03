@@ -8,7 +8,6 @@ import dateToStr from '../../../utils/dateToStr';
 
 const Home = () =>{ 
     const posts = useSelector(getAllPosts);
-
     return(
         <Container>
             <Row className="align-items-start">
