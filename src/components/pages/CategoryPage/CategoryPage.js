@@ -1,19 +1,22 @@
-import { getAllPosts } from "../../../redux/postsRedux";
+import { getPostByCategory } from "../../../redux/postsRedux";
 import { useSelector } from "react-redux";
 import Card from "../../features/Card/Card";
 import { Container, Col, Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { NavLink } from 'react-router-dom';
 import dateToStr from '../../../utils/dateToStr';  
+import { useParams } from 'react-router';
 
-const Home = () =>{ 
-    const posts = useSelector(getAllPosts);
-    
+const CategoryPage = () =>{ 
+    const { category } = useParams();
+    const posts = useSelector(state => getPostByCategory(state, category));
+    console.log(posts);
+
     return(
         <Container>
             <Row className="align-items-start">
                         <Col>
-                            <h1 className="display-4 mb-3 mt-2">All Posts</h1>
+                            <h1 className="display-4 mb-3 mt-2">Category: {category}</h1>
                         </Col>
                         <Col xs="auto" className="d-flex gap-2">
                             <Button   
@@ -43,4 +46,4 @@ const Home = () =>{
     );
 }
 
-export default Home;
+export default CategoryPage;

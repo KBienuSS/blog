@@ -1,6 +1,5 @@
 const dateToStr = (date) => {
   if (!(date instanceof Date) || isNaN(date)) {
-    console.error('Invalid date object');
     return '';
   }
   

@@ -6,6 +6,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '2026-03-03T10:10:16.157Z',
+            category:'Sport',
             author: 'John Doe'
         },
         {
@@ -14,6 +15,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '2026-03-03T10:10:16.157Z',
+            category:'News',
             author: 'John Doe'
         },
         {
@@ -22,6 +24,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '2026-03-03T10:10:16.157Z',
+            category:'Movies',
             author: 'John Doe'
         },
         {
@@ -30,8 +33,14 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '2026-03-03T10:10:16.157Z',
+            category:'Sport',
             author: 'John Doe'
         },
+    ],
+    category:[
+        "Sport",
+        "News",
+        "Movies"
     ]
 }
 

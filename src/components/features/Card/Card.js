@@ -9,7 +9,8 @@ const CardCreator = props =>{
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">Author: {props.author}</Card.Subtitle>
-            <Card.Subtitle className="mb-2 text-muted">Published:{props.publishedDate}</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Published: {props.publishedDate}</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted">Category: {props.category}</Card.Subtitle>
             <Card.Text>
             {props.shortDescription}
             </Card.Text>

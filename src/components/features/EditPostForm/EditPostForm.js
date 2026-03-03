@@ -28,6 +28,7 @@ const EditPostForm = props =>{
                 title={postData.title} 
                 author={postData.author} 
                 publishedDate={postData.publishedDate}
+                category={postData.category}
                 shortDescription={postData.shortDescription}
                 content={postData.content}/>
         </Container>

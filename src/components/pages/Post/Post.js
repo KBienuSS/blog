@@ -42,6 +42,9 @@ const Post = () =>{
                                 <p className="mb-0">
                                     <span className="fw-semibold">Published:</span> {dateToStr(postData.publishedDate)} 
                                 </p>
+                                <p className="mb-0">
+                                    <span className="fw-semibold">Category:</span> {postData.category} 
+                                </p>
                             </div>
                         </Col>
                         <Col xs="auto" className="d-flex gap-2">
